@@ -1,0 +1,20 @@
+.all-txns-head-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+.all-transactions{
+    background-color: #f5f5f7;
+    padding: 1rem 0 1rem 0;
+}
+.all-txns-un-list{
+    background-color: #fff;
+    margin: 2rem 3rem 3rem 3rem;
+    border-radius: 2rem;
+}
+.tabs-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
