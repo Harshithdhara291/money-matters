@@ -45,4 +45,5 @@
     border: 1px solid rgb(228, 218, 218);
     height: 3.5rem;
     width: 16rem;
+    cursor: pointer;
 }

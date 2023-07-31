@@ -56,7 +56,6 @@ const Dashboard = () => {
       <div className='dashboard-container'>
         <div className='head-container'>
           <h1 className='accounts-head'>Accounts</h1>
-          <button type='button' className='add-txn-button'>+ Add Transaction</button>
         </div>
         <div className='second-container'>
             <div className='credit-debit-container'>

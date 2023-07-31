@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom'
 import { AiFillHome,AiOutlineTransaction } from 'react-icons/ai';
 import { MdAccountBox } from 'react-icons/md';
 import { FiLogOut } from 'react-icons/fi';
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom' 
 import './index.css'
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
+
+  const onClickLogout = () => {
+    Cookies.remove('user_id')
+    navigate('/login')
+  }
+
   return (
     <div className='navbar-main-container'>
     <nav className='navbar'>
@@ -34,7 +44,7 @@ const Navbar = () => {
     </div>
     </nav>
         <div className='logout-button-cont'>
-            <button type='button' className='logout-button'>Logout <FiLogOut/> </button>
+            <button type='button' className='logout-button' onClick={onClickLogout}>Logout <FiLogOut/> </button>
         </div>
     </div>
   )

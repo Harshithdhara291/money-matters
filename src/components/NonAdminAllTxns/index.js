@@ -5,6 +5,7 @@ import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import LoadingView from '../Loading'
 import FailureView from '../FailureView'
+import AddTransaction from '../AddTransaction';
 import TabItem from '../NonAdminTabItem';
 import './index.css'
 
@@ -26,6 +27,7 @@ const NonAdminLastTxns = () => {
     const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
     const [transactionData, setTransactionData] = useState([])
     const [activeTab, setActiveTab] = useState(tabsList[0].tabId)
+    const [modalOpen, setModalOpen] = useState(false);
     
 
     useEffect(() => {
@@ -148,7 +150,9 @@ const NonAdminLastTxns = () => {
     <div>
         <div className='all-txns-head-container'>
           <h1 className='accounts-head'>Transactions</h1>
-          <button type='button' className='add-txn-button'>+ Add Transaction</button>
+          <button type='button' className='add-txn-button' onClick={() => {
+          setModalOpen(true);
+        }}>+ Add Transaction</button>
         </div>
         <div>
           <ul className='tabs-list'>
@@ -160,6 +164,7 @@ const NonAdminLastTxns = () => {
             ))}
           </ul>
         </div>
+        {modalOpen && <AddTransaction setOpenModal={setModalOpen} />}
         <div className='all-transactions'>{renderTransactions()}</div>
     </div>
   )

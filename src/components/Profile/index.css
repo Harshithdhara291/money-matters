@@ -1,0 +1,33 @@
+.profile-container{
+    margin-left: 16rem;
+    width: 100%;
+}
+.profile-second-container{
+    background-color: #f5f5f7;
+    padding: 3rem;
+}
+.details-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    padding: 2rem 0 2rem 0;
+}
+.profile-item{
+    margin: 0 3rem 0 3rem;
+}
+.profile-labels{
+    color: #505887;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.profile-para{
+    border: 2px solid #ecedf1;
+    color: #718EBF;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding:0.5rem 6rem 0.5rem 3rem;
+    border-radius: 1rem;
+}
