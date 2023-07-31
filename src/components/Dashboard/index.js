@@ -9,9 +9,12 @@ const Dashboard = () => {
 
   const [credit, setCredit] = useState(0)
   const [debit, setDebit] = useState(0)
+  const [creditAdmin, setCreditAdmin] = useState(0)
+  const [debitAdmin, setDebitAdmin] = useState(0)
 
   useEffect(() => {
     getCreditDebitTotal()
+    getCreditDebitTotalAdmin()
   }, []
   )
 
@@ -48,6 +51,39 @@ const Dashboard = () => {
     } 
   }
 
+  const getCreditDebitTotalAdmin = async() =>{
+    const apiUrl = `https://bursting-gelding-24.hasura.app/api/rest/transaction-totals-admin`
+    const options = {
+      headers: {
+        'Content-Type' : 'application/json',
+        'x-hasura-admin-secret': 'g08A3qQy00y8yFDq3y6N1ZQnhOPOa4msdie5EtKS1hFStar01JzPKrtKEzYY2BtF',
+        'x-hasura-role' : 'admin',
+      },
+      method: 'GET',
+    }
+    const response = await fetch(apiUrl, options)
+    const fetchedData = await response.json()
+    const array1 = fetchedData.transaction_totals_admin
+    let credited=0,debited=0;
+    for (let i = 0 ; i<array1.length; i++){
+      console.log(array1[i])
+        if(array1[i].type==='credit'){
+          credited+=array1[i].sum
+        } else{
+          debited+=array1[i].sum
+        }
+    }
+    // console.log(credited,debited)
+    
+    if (response.ok) {
+      setCreditAdmin(credited)
+      setDebitAdmin(debited)
+    } 
+  }
+  const userId = Cookies.get('user_id')
+  const resultCredit = (userId===3) ? creditAdmin : credit
+  const resultDebit = (userId===3) ? debitAdmin : debit
+
 
 
   return (
@@ -61,14 +97,14 @@ const Dashboard = () => {
             <div className='credit-debit-container'>
               <div className='credit-container'>
                 <div>
-                  <h1 className='credit-amount-head'>${credit}</h1>
+                  <h1 className='credit-amount-head'>${resultCredit}</h1>
                   <p className='credit-debit-para'>Credit</p>
                 </div>
                   <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690692027/credit_b8jngd.png' alt='credit' className='credit-debit-image'/>
               </div>
               <div className='debit-container'>
                 <div>
-                  <h1 className='debit-amount-head'>${debit}</h1>
+                  <h1 className='debit-amount-head'>${resultDebit}</h1>
                   <p className='credit-debit-para'>Debit</p>
                 </div>
                   <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690692017/debit_db9dra.png' alt='credit' className='credit-debit-image'/>

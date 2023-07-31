@@ -1,9 +1,8 @@
 import React from 'react'
 import Cookies from 'js-cookie'
 import { useState,useEffect } from 'react';
-import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
-import { RiDeleteBin6Line } from 'react-icons/ri';
 import LoadingView from '../Loading'
+import EachLastThreeTransaction from '../EachLastThreeTxn'
 import FailureView from '../FailureView'
 import './index.css'
 
@@ -61,28 +60,9 @@ const NonAdminLastTxns = () => {
         console.log(transactionData)
         return (
             <ul className='txns-un-list'>
-                {transactionData.map(eachTxn =>{
-                    const isCredit = eachTxn.type==='credit'
-                    const arrow = isCredit ? <BsArrowUpCircle/> : <BsArrowDownCircle/>
-                    const symbol = isCredit ? "+" : "-"
-                    const style = isCredit ? 'credit' : 'debit'
-                    const category = eachTxn.category ? eachTxn.category : 'none'
-                    return (
-                    <li key={eachTxn.id} className='each-txn'>
-                        <div className='arrow-txn-cont'>
-                         <span className={style}>{arrow}</span>
-                         <h1 className='txn-name-head'>{eachTxn.transactionName}</h1>
-                        </div>
-                        <p className='txn-para-category'>{category}</p>
-                        <p className='txn-para'>{eachTxn.date}</p>
-                        <p className={style}>{symbol}${eachTxn.amount}</p>
-                        <div className='icons-cont'>
-                        <BsPencil className='pencil-icon'/>
-                        <RiDeleteBin6Line className='delete-icon'/>
-                        </div>
-                    </li>
-                    
-                )})}
+                {transactionData.map(eachTxn =>(
+                  <EachLastThreeTransaction key={eachTxn.id} eachTxn={eachTxn} getLastTransactions={getLastTransactions} />
+                    ))}
             </ul>
         )
 

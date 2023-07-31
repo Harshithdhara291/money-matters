@@ -4,4 +4,5 @@
 .all-txns-container{
     margin-left: 16rem;
     width: 100%;
+    border-left: 1px solid rgb(228, 218, 218);
 }

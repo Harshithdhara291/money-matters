@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const AddTransaction = ({ setOpenModal }) => {
+const AddTransaction = ({ setOpenModal,getAllTransactions }) => {
 
   const [name, setTxnName] = useState('')
   const [type, setTxnType] = useState('credit')
@@ -31,6 +31,13 @@ const AddTransaction = ({ setOpenModal }) => {
         const response = await fetch(url, options)
         const data = await response.json()
         console.log(data)
+        setTxnName('')
+        setTxnType('credit')
+        setCategory('transfer')
+        setAmount('')
+        setDate('')
+        setOpenModal(false);
+        getAllTransactions()
       }
 
   return (
@@ -40,7 +47,7 @@ const AddTransaction = ({ setOpenModal }) => {
             onClick={() => {
               setOpenModal(false);
             }}
-            style={{backgroundColor:'none',border:'none'}}
+            style={{backgroundColor:'none',border:'none',cursor:'pointer'}}
           >
             X
           </button>

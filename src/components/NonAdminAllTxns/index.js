@@ -1,12 +1,11 @@
 import React from 'react'
 import Cookies from 'js-cookie'
 import { useState,useEffect } from 'react';
-import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
-import { RiDeleteBin6Line } from 'react-icons/ri';
 import LoadingView from '../Loading'
 import FailureView from '../FailureView'
 import AddTransaction from '../AddTransaction';
 import TabItem from '../NonAdminTabItem';
+import EachTransaction from '../EachTxn';
 import './index.css'
 
 const apiStatusConstants = {
@@ -101,28 +100,9 @@ const NonAdminLastTxns = () => {
 
         return (
             <ul className='all-txns-un-list'>
-                {filteredTxns.map(eachTxn =>{
-                    const isCredit = eachTxn.type==='credit'
-                    const arrow = isCredit ? <BsArrowUpCircle/> : <BsArrowDownCircle/>
-                    const symbol = isCredit ? "+" : "-"
-                    const style = isCredit ? 'credit' : 'debit'
-                    const category = eachTxn.category ? eachTxn.category : 'none'
-                    return (
-                    <li key={eachTxn.id} className='each-txn'>
-                        <div className='arrow-txn-cont'>
-                         <span className={style}>{arrow}</span>
-                         <h1 className='txn-name-head'>{eachTxn.transactionName}</h1>
-                        </div>
-                        <p className='txn-para-category'>{category}</p>
-                        <p className='txn-para'>{eachTxn.date}</p>
-                        <p className={style}>{symbol}${eachTxn.amount}</p>
-                        <div className='icons-cont'>
-                        <BsPencil className='pencil-icon'/>
-                        <RiDeleteBin6Line className='delete-icon'/>
-                        </div>
-                    </li>
-                    
-                )})}
+                {filteredTxns.map(eachTxn =>(
+                  <EachTransaction key={eachTxn.id} eachTxn={eachTxn} getAllTransactions={getAllTransactions} />
+                ))}
             </ul>
         )
 
@@ -164,7 +144,7 @@ const NonAdminLastTxns = () => {
             ))}
           </ul>
         </div>
-        {modalOpen && <AddTransaction setOpenModal={setModalOpen} />}
+        {modalOpen && <AddTransaction setOpenModal={setModalOpen} getAllTransactions={getAllTransactions} />}
         <div className='all-transactions'>{renderTransactions()}</div>
     </div>
   )

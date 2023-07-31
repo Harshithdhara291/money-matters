@@ -18,3 +18,12 @@
     justify-content: flex-start;
     align-items: center;
 }
+.add-txn-button{
+    border: none;
+    color: #fff;
+    margin-right: 1rem;
+    background-color: #2D60FF;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}

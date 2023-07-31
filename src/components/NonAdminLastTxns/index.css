@@ -3,65 +3,8 @@
   font-weight: 600;
   font-size: 1.6rem;
   margin-left: 1rem;
+  background: none;
 }
 .txns-un-list{
     margin-left: 0;
-}
-.each-txn{
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.arrow-txn-cont{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 10rem;
-    margin-left: 0px;
-}
-.txn-name-head{
-    color: #4c5481;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-left: 1rem;
-}
-.txn-para-category{
-    color: #646c94;
-    font-weight: 500;
-    width: 8rem;
-    font-size: 1rem;
-}
-.txn-para{
-    color: #646c94;
-    font-weight: 500;
-    font-size: 1rem;
-}
-.credit{
-    color: #16DBAA;
-    font-weight: 600;
-    font-size: 1.3rem;
-
-}
-.debit{
-    color: #FE5C73;
-    font-weight: 600;
-    font-size: 1.3rem;
-}
-
-.icons-cont{
-    margin-right: 2rem;
-}
-.pencil-icon{
-    color: #2D60FF;
-    font-weight: 600;
-    font-size: 1.3rem;
-    cursor: pointer;
-    margin-right: 1.5rem;
-}
-.delete-icon{
-    color: #FE5C73;
-    font-weight: 600;
-    font-size: 1.3rem;
-    cursor: pointer;
 }
