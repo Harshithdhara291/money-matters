@@ -4,7 +4,43 @@ import Cookies from 'js-cookie'
 import { useState,useEffect } from 'react';
 import LoadingView from '../Loading'
 import FailureView from '../FailureView'
+import {Bar} from 'react-chartjs-2'
+import {CategoryScale,Chart,LinearScale,BarElement,Legend,Title,Tooltip} from 'chart.js'; 
 import './index.css'
+
+Chart.register(CategoryScale,LinearScale,BarElement,Legend,Title,Tooltip)
+
+const labels = ['sun','mon','tue','wed','thu','fri','sat']
+
+const data = {
+    labels,
+    datasets : [
+        {
+            label:'debit',
+            data:[100,200,300,400,500,600,700],
+            backgroundColor:'blue'
+        },
+        {
+            label:'credit',
+            data:[200,300,400,500,600,700,800],
+            backgroundColor:'yellow'
+        }
+    ]
+
+}
+
+const options ={
+
+    plugins:{
+        legend:{
+            position:'top'
+        },
+        title:{
+            display:true,
+            text:'Credit Debit'
+        }
+    }
+}
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -14,22 +50,7 @@ const apiStatusConstants = {
 }
 
 const ReactChart = () => {
-
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
-    const [profileData, setProfileData] = useState({})
-    
-    const getFormattedData = data => ({
-      name: data.name,
-      email: data.email,
-      country: data.country,
-      id: data.id,
-      dateOfBirth: data.date_of_birth,
-      city: data.city,
-      permanentAddress: data.permanent_address,
-      postalCode: data.postal_code,
-      presentAddress: data.present_address,
-    })
-
     useEffect(() => {
         getLastWeekCreditDebit()
       }, []
@@ -66,7 +87,7 @@ const ReactChart = () => {
 
         return (
             <div className='chart'>
-                  <h1>chart</h1>
+                <Bar data={data} options={options} />
             </div>
         )
       }
@@ -86,9 +107,8 @@ const ReactChart = () => {
       }
 
   return (
-    <div className='main-container-profile'>
-      
-        <h1 className='accounts-head'>chart</h1>
+    <div className='main-container-chart'>
+        <h1 className='accounts-head'>Debit & Credit Overview</h1>
         {renderProfileData()}
     </div>
   )

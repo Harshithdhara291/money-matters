@@ -1,0 +1,17 @@
+.main-container-chart{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:991px) {
+    
+    .chart{
+        height: 10rem;
+        width:20rem;
+    }
+}
+@media screen and (min-width:992px) {
+    .chart{
+        height: 20rem;
+        width:50rem;
+    }
+}
