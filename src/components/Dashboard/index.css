@@ -15,14 +15,17 @@
   font-weight: 600;
   font-size: 1.8rem;
   margin-left: 1rem;
+  background: none;
 }
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 992px) {
     .main-container{
         display: flex;
+        
     }
     .second-container{
         padding: 2rem;
         background-color: #f5f5f7;
+        min-height: 80vh;
       }
       .credit-container{
         display: flex;
@@ -68,7 +71,7 @@
         align-items: center;
     }
 }
-@media screen and (max-width: 1099px) {
+@media screen and (max-width: 991px) {
     .main-container{
         display: flex;
         flex-direction: column;
@@ -76,7 +79,7 @@
     .second-container{
         padding: 1rem;
         background-color: #f5f5f7;
-        height: 100%;
+        min-height: 80vh;
       }
       .credit-debit-container{
         display: flex;

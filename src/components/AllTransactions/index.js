@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react';
 import LoadingView from '../Loading'
 import FailureView from '../FailureView'
 import AddTransaction from '../AddTransaction';
-import TabItem from '../NonAdminTabItem';
+import TabItem from '../TabItem';
 import EachTransaction from '../EachTxn';
 import './index.css'
 
@@ -21,7 +21,7 @@ const apiStatusConstants = {
     {tabId: 'DEBIT', displayText: 'Debit'},
   ]
 
-const NonAdminLastTxns = () => {
+const AllTransactions = () => {
 
     const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
     const [transactionData, setTransactionData] = useState([])
@@ -127,13 +127,14 @@ const NonAdminLastTxns = () => {
       }
 
   return (
-    <div>
+    <>
         <div className='all-txns-head-container'>
           <h1 className='accounts-head'>Transactions</h1>
           <button type='button' className='add-txn-button' onClick={() => {
           setModalOpen(true);
         }}>+ Add Transaction</button>
         </div>
+        {modalOpen && <AddTransaction setOpenModal={setModalOpen} getAllTransactions={getAllTransactions} />}
         <div>
           <ul className='tabs-list'>
             {tabsList.map(tabDetails=>(
@@ -144,10 +145,9 @@ const NonAdminLastTxns = () => {
             ))}
           </ul>
         </div>
-        {modalOpen && <AddTransaction setOpenModal={setModalOpen} getAllTransactions={getAllTransactions} />}
         <div className='all-transactions'>{renderTransactions()}</div>
-    </div>
+    </>
   )
 }
 
-export default NonAdminLastTxns
+export default AllTransactions

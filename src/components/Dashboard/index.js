@@ -2,7 +2,8 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Cookies from 'js-cookie'
 import Navbar from '../Navbar'
-import NonAdminLastTxns from '../NonAdminLastTxns'
+import LastThreeTransactions from '../LastThreeTransactions'
+import ReactChart from '../ReactCharts'
 import './index.css'
 
 const Dashboard = () => {
@@ -111,7 +112,10 @@ const Dashboard = () => {
               </div>
             </div>
             <div className='last-txn-container'>
-              <NonAdminLastTxns/>
+              <LastThreeTransactions/>
+            </div>
+            <div className='react-chart-container'>
+              <ReactChart/>
             </div>
         </div>
       </div>

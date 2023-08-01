@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '../Navbar'
-import NonAdminAllTxns from '../NonAdminAllTxns'
+import AllTransactions from '../AllTransactions'
 import './index.css'
 
 const Transactions = () => {
   return (
-    <div className='main-container'>
+    <div className='main-container-txns'>
       <div className='header-container'><Navbar/></div>
-      <div className='all-txns-container'><NonAdminAllTxns/></div>
+      <div className='all-txns-container'><AllTransactions/></div>
     </div>
   )
 }

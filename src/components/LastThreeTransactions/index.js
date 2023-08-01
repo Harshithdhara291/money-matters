@@ -13,7 +13,7 @@ const apiStatusConstants = {
     inProgress: 'IN_PROGRESS',
   }
 
-const NonAdminLastTxns = () => {
+const LastThreeTransactions = () => {
 
     const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
     const [transactionData, setTransactionData] = useState([])
@@ -92,4 +92,4 @@ const NonAdminLastTxns = () => {
   )
 }
 
-export default NonAdminLastTxns
+export default LastThreeTransactions

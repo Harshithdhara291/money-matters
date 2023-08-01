@@ -2,7 +2,7 @@ import React from 'react'
 import Cookies from 'js-cookie'
 import { BsArrowDownCircle,BsArrowUpCircle } from 'react-icons/bs';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-
+import './index.css'
 const EachLastThreeTransaction = (props) => {
     const {eachTxn,getLastTransactions} = props
     const isCredit = eachTxn.type==='credit'

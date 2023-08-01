@@ -130,7 +130,7 @@ const Profile = () => {
       }
 
   return (
-    <div className='main-container'>
+    <div className='main-container-profile'>
       <div className='header-container'><Navbar/></div>
       <div className='profile-container'>
       <div className='all-txns-head-container'>

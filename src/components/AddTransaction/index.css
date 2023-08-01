@@ -1,7 +1,18 @@
-.add-transaction{
-    z-index: 1;
-    margin-left: 20rem;
-}
 select{
     padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+option{
+    padding: 0.2rem;
+}
+@media screen and (max-width: 991px) {
+    .add-transaction{
+        z-index: 1;
+    }
+}
+@media screen and (min-width: 992px) {
+    .add-transaction{
+        z-index: 1;
+        margin-left: 20rem;
+    }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiFillHome,AiOutlineTransaction } from 'react-icons/ai';
 import { MdAccountBox } from 'react-icons/md';
-import { FiLogOut } from 'react-icons/fi';
+import { FiLogOut,FiMenu } from 'react-icons/fi';
 import {AiFillCloseCircle} from 'react-icons/ai'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom' 
@@ -34,6 +34,7 @@ const Navbar = () => {
         <Link to="/profile" className="mobile-nav-link">
           <li className="ov-nav-item"><MdAccountBox className='react-icon'/></li>
         </Link>
+        <button type='button' className='logout-button' onClick={onClickLogout}> <FiLogOut  className='react-icon' /> </button>
       </ul>
       <button type="button" onClick={handleMenu} className="close-button">
         <AiFillCloseCircle className="close-icon" />
@@ -56,7 +57,7 @@ const Navbar = () => {
                 className="mobile-button-nav-link"
                 onClick={handleMenu}
               >
-                HB
+                <FiMenu className='menu-icon'/>
               </button>
           </div>
         </div>
@@ -68,7 +69,7 @@ const Navbar = () => {
   const renderDesktopView = () => (
     <div className='navbar-main-container'>
     <nav className='navbar'>
-    <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690692005/Logo_usdjsi.png' alt='website-logo' className='mobile-logo' />
+    <Link to="/"><img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690692005/Logo_usdjsi.png' alt='website-logo' className='mobile-logo' /></Link>
     <div className='nav-container'>
         <ul className="nav-menu">
                 <li className="nav-menu-item">
@@ -87,6 +88,7 @@ const Navbar = () => {
                 <MdAccountBox className='react-icon'/> Profile
                 </Link>
                 </li>
+                
 
         </ul>
         
