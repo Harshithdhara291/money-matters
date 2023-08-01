@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const AddTransaction = ({ setOpenModal,getAllTransactions }) => {
+const AddTransaction = ({ getAllTransactions }) => {
 
   const [name, setTxnName] = useState('')
   const [type, setTxnType] = useState('credit')
@@ -36,26 +36,16 @@ const AddTransaction = ({ setOpenModal,getAllTransactions }) => {
         setCategory('transfer')
         setAmount('')
         setDate('')
-        setOpenModal(false);
         getAllTransactions()
       }
 
+
   return (
     <div className='add-transaction'>
-        <div className="titleCloseBtn">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            style={{backgroundColor:'none',border:'none',cursor:'pointer'}}
-          >
-            X
-          </button>
-        </div>
-    <form className="form" onSubmit={submitForm} >
-       <p className="form-title">Add Transaction</p>
-        <div className="input-container">
-        <label className="input-label" htmlFor="txnName">Transaction Name</label>
+    <form className="form-ad" onSubmit={submitForm} >
+       <p className="form-title-ad">Add Transaction</p>
+        <div className="input-container-ad">
+        <label  htmlFor="txnName">Transaction Name</label>
         <input
               type="text"
               id="txnName"
@@ -64,19 +54,19 @@ const AddTransaction = ({ setOpenModal,getAllTransactions }) => {
               placeholder="Enter Name"
               required
             />
-            <label className="input-label" htmlFor="type">Transaction Type</label>
+            <label  htmlFor="type">Transaction Type</label>
             <select id='type' value={type} onChange={(e) => setTxnType(e.target.value)}>
                 <option value='credit'>credit</option>
                 <option value='debit'>debit</option>
             </select>
-            <label className="input-label" htmlFor="category">Category</label>
+            <label  htmlFor="category">Category</label>
             <select id='category' value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value='transfer'>Transfer</option>
                 <option value='food'>Food</option>
                 <option value='shopping'>Shopping</option>
                 <option value='salary'>Salary</option>
             </select>
-        <label className="input-label" htmlFor="amount">
+        <label  htmlFor="amount">
               Amount
             </label>
             <input
@@ -87,7 +77,7 @@ const AddTransaction = ({ setOpenModal,getAllTransactions }) => {
               placeholder="Enter Amount"
               required
             />
-        <label className="input-label" htmlFor="date">
+        <label  htmlFor="date">
               Date
             </label>
             <input

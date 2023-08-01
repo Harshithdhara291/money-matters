@@ -1,6 +1,8 @@
 import React from 'react'
 import Cookies from 'js-cookie'
 import { useState,useEffect } from 'react';
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 import LoadingView from '../Loading'
 import FailureView from '../FailureView'
 import AddTransaction from '../AddTransaction';
@@ -21,12 +23,13 @@ const apiStatusConstants = {
     {tabId: 'DEBIT', displayText: 'Debit'},
   ]
 
+ 
+
 const AllTransactions = () => {
 
     const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
     const [transactionData, setTransactionData] = useState([])
     const [activeTab, setActiveTab] = useState(tabsList[0].tabId)
-    const [modalOpen, setModalOpen] = useState(false);
     
 
     useEffect(() => {
@@ -126,15 +129,39 @@ const AllTransactions = () => {
         setActiveTab(tabValue)
       }
 
+      const ReactPopUp = () => (
+        <div>
+          <Popup
+            modal
+            trigger={
+              <button type="button" className="add-txn-button">
+                + Add Transaction
+              </button>
+            }
+            
+          >
+            {close => (
+              <>
+                  <div className="popup-container">< AddTransaction getAllTransactions={getAllTransactions}/></div>
+                <button
+                  type="button"
+                  className="trigger-button"
+                  onClick={() => close()}
+                >
+                  Close
+                </button>
+              </>
+            )}
+          </Popup>
+        </div>
+       )
+
   return (
     <>
         <div className='all-txns-head-container'>
           <h1 className='accounts-head'>Transactions</h1>
-          <button type='button' className='add-txn-button' onClick={() => {
-          setModalOpen(true);
-        }}>+ Add Transaction</button>
-        </div>
-        {modalOpen && <AddTransaction setOpenModal={setModalOpen} getAllTransactions={getAllTransactions} />}
+        <ReactPopUp/>
+        </div>        
         <div>
           <ul className='tabs-list'>
             {tabsList.map(tabDetails=>(

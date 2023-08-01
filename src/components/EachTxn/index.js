@@ -2,6 +2,9 @@ import React from 'react'
 import Cookies from 'js-cookie'
 import { BsArrowDownCircle,BsArrowUpCircle } from 'react-icons/bs';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { BiError } from 'react-icons/bi';
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 import './index.css'
 
 const EachTransaction = (props) => {
@@ -37,6 +40,42 @@ const EachTransaction = (props) => {
         
       }
 
+      const ReactPopUp = () => (
+        <div>
+          <Popup
+            modal
+            trigger={
+              <button type='button' className='dlt-btn'><RiDeleteBin6Line className='delete-icon-main' /></button>
+            }
+          >
+            {close => (
+              <>
+                  <div className='delete-container'>
+                    <h1 className='delete-head'><BiError className='delete-icon' />Are you sure you want to Delete?</h1>
+                    <p className='delete-para'>This transaction will be deleted immediately. You can’t undo this action.</p>
+                    <div className='buttons-cont'>
+                      <button
+                      type="button"
+                      className="trigger-delete-button"
+                      onClick={deleteTransactions}
+                      >Yes, Delete</button>
+                      <button
+                          type="button"
+                          className="trigger-close-button"
+                          onClick={() => close()}
+                        >
+                          No, leave it
+                        </button>
+                    </div>
+                  </div>
+                
+              </>
+            )}
+          </Popup>
+        </div>
+       )
+
+
 
     return (
     <li key={eachTxn.id} className='each-txn'>
@@ -48,7 +87,7 @@ const EachTransaction = (props) => {
         <p className='txn-para'>{date}</p>
         <p className={style}>{symbol}${eachTxn.amount}</p>
         <div className='icons-cont'>
-        <button type='button' onClick={deleteTransactions} className='delete-btn'><RiDeleteBin6Line className='delete-icon'/></button>
+        <ReactPopUp/>
         </div>
     </li>
     

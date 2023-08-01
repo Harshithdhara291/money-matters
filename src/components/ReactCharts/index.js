@@ -18,12 +18,14 @@ const data = {
         {
             label:'debit',
             data:[100,200,300,400,500,600,700],
-            backgroundColor:'blue'
+            backgroundColor:'#4D78FF',
+            borderRadius: 10,
         },
         {
             label:'credit',
             data:[200,300,400,500,600,700,800],
-            backgroundColor:'yellow'
+            backgroundColor:'#FCAA0B',
+            borderRadius: 10,
         }
     ]
 
@@ -37,7 +39,7 @@ const options ={
         },
         title:{
             display:true,
-            text:'Credit Debit'
+            text:'$7,560 Debited & $5,420 Credited in this Week'
         }
     }
 }
@@ -108,7 +110,7 @@ const ReactChart = () => {
 
   return (
     <div className='main-container-chart'>
-        <h1 className='accounts-head'>Debit & Credit Overview</h1>
+        <h1 className='accounts-head-charts'>Debit & Credit Overview</h1>
         {renderProfileData()}
     </div>
   )

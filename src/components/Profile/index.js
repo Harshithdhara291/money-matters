@@ -75,42 +75,54 @@ const Profile = () => {
 
         return (
             <div className='details-cont'>
-                  <div className='profile-item'>
-                    <h1 className='profile-labels'>Your Name</h1>
-                    <p className='profile-para'>{profileData.name}</p>
-                  </div>
+                <img src='https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg?w=360' alt='profile'  className='profile-image' />
+                <div className='profile-item-container'>
+                    <div className='profile-item'>
+                      <h1 className='profile-labels'>Your Name</h1>
+                      <p className='profile-para'>{profileData.name}</p>
+                    </div>
+                    <div className='profile-item'>
+                      <h1 className='profile-labels'>Email</h1>
+                      <p className='profile-para'>{email}</p>
+                    </div>
+                    <div className='profile-item'>
+                      <h1 className='profile-labels'>Date of Birth</h1>
+                      <p className='profile-para'>{dateOfBirth}</p>
+                    </div>
+                    <div className='profile-item'>
+                      <h1 className='profile-labels'>Permanent Address</h1>
+                      <p className='profile-para'>{permanentAddress}</p>
+                    </div>
+                    <div className='profile-item'>
+                      <h1 className='profile-labels'>Postal Code</h1>
+                      <p className='profile-para'>{postalCode}</p>
+                    </div>
+                </div>
+                <div className='profile-item-container'>
                   <div className='profile-item'>
                     <h1 className='profile-labels'>User Name</h1>
                     <p className='profile-para'>{profileData.name}</p>
                   </div>
                   <div className='profile-item'>
-                    <h1 className='profile-labels'>Email</h1>
-                    <p className='profile-para'>{email}</p>
+                    <h1 className='profile-labels'>Password</h1>
+                    <p className='profile-para'>*********</p>
                   </div>
-                  <div className='profile-item'>
-                    <h1 className='profile-labels'>Date of Birth</h1>
-                    <p className='profile-para'>{dateOfBirth}</p>
-                  </div>
+                  
                   <div className='profile-item'>
                     <h1 className='profile-labels'>Present Address</h1>
                     <p className='profile-para'>{presentAddress}</p>
                   </div>
-                  <div className='profile-item'>
-                    <h1 className='profile-labels'>Permanent Address</h1>
-                    <p className='profile-para'>{permanentAddress}</p>
-                  </div>
+                  
                   <div className='profile-item'>
                     <h1 className='profile-labels'>City</h1>
                     <p className='profile-para'>{city}</p>
                   </div>
-                  <div className='profile-item'>
-                    <h1 className='profile-labels'>Postal Code</h1>
-                    <p className='profile-para'>{postalCode}</p>
-                  </div>
+          
                   <div className='profile-item'>
                     <h1 className='profile-labels'>Country</h1>
                     <p className='profile-para'>{country}</p>
                   </div>
+                </div>
             </div>
         )
       }

@@ -44,16 +44,68 @@
     .icons-cont{
         margin-right: 2rem;
     }
-    .delete-btn{
-        background: none;
-        border: none;
-    }
-    .delete-icon{
+
+    .delete-icon-main{
         color: #FE5C73;
-        font-weight: 600;
-        font-size: 1.3rem;
+        background: none;
+        font-size: 1.5rem;
         cursor: pointer;
     }
+    .delete-container{
+        padding: 2rem;
+      }
+    
+      .delete-icon{
+        color: #D97706;
+        background-color: #FDE68A;
+        border: 5px solid #FEF3C7;
+        padding: 0.6rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        margin-right: 1rem;
+        
+      }
+    
+      .delete-head{
+        display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #333B69;
+    font-size: 1.8rem;
+    font-weight: 700;
+      }
+      .delete-para{
+        color: #505887;
+        font-size: 1.2rem;
+    }
+      .buttons-cont{
+        width: 60%;
+    display: flex;
+    justify-content: space-between;
+    
+      }
+      .trigger-delete-button{
+        border: none;
+    background-color: #DC2626;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 10rem;
+      }
+      .trigger-close-button{
+        border: 1px solid #e6dddd;
+        background-color: #fff;
+        color: #0f0f0f;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.7rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        width: 10rem;
+      }
 }
 @media screen and (max-width: 991px) {
     .each-txn{
@@ -110,4 +162,74 @@
         font-size: 0.7rem;
         cursor: pointer;
     }
+    .delete-container{
+        padding: 1rem;
+      }
+    
+      .delete-icon{
+        color: #D97706;
+        background-color: #FDE68A;
+        border: 5px solid #FEF3C7;
+        padding: 0.6rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        margin-right: 1rem;
+
+      }
+    
+      .delete-head{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #333B69;
+        font-size: 1.3rem;
+        font-weight: 700;
+        background: none;
+      }
+      .delete-para{
+        color: #505887;
+        font-size: 0.7rem;
+    }
+      .buttons-cont{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    
+      }
+      .trigger-delete-button{
+        border: none;
+        background-color: #DC2626;
+        color: #ffffff;
+        font-size: 0.5rem;
+        font-weight: 500;
+        /* padding: 0.7rem; */
+        border-radius: 0.5rem;
+        cursor: pointer;
+        width: 5rem;
+        height: 1.5rem;
+      }
+      .trigger-close-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #e6dddd;
+        background-color: #fff;
+        color: #0f0f0f;
+        font-size: 0.5rem;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        width: 5rem;
+        height: 1.5rem;
+      }
+      .delete-icon-main{
+        color: #FE5C73;
+        background: none;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+}
+.dlt-btn{
+    background: none;
+    border: none;
 }

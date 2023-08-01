@@ -89,7 +89,7 @@ const Dashboard = () => {
 
   return (
     <div className='main-container'>
-      <Navbar/>
+      <div className='header-container'><Navbar/></div>
       <div className='dashboard-container'>
         <div className='head-container'>
           <h1 className='accounts-head'>Accounts</h1>

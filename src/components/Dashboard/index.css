@@ -2,13 +2,14 @@
 .dashboard-container{
     width: 100%;
     border-left: 1px solid rgb(228, 218, 218);
+    margin-left: 16rem;
 }
 .head-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(228, 218, 218);
-    /* position: sticky; */
+    position: sticky;
 }
 .accounts-head{
   color: #343C6A;

@@ -20,7 +20,7 @@ const LoginForm = (props) => {
     navigate('/')
   }
 
-  const onSubmitFailure = errorMsg => {
+  const onSubmitFailure = () => {
     setSubmitError(true)
     setErrorMsg('username or password incorrect')
   }
@@ -28,6 +28,9 @@ const LoginForm = (props) => {
     const submitForm = async event => {
         event.preventDefault()
         const userDetails = {email, password}
+        Cookies.set('user_email', email, {
+          expires: 30,
+        })
         console.log(userDetails)
         const url = `https://bursting-gelding-24.hasura.app/api/rest/get-user-id`
         const options = {
