@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/money-matters/static/css/main.3eff246c.css",
+    "main.js": "/money-matters/static/js/main.4ff0cef0.js",
+    "static/js/787.0420ccf9.chunk.js": "/money-matters/static/js/787.0420ccf9.chunk.js",
+    "index.html": "/money-matters/index.html",
+    "main.3eff246c.css.map": "/money-matters/static/css/main.3eff246c.css.map",
+    "main.4ff0cef0.js.map": "/money-matters/static/js/main.4ff0cef0.js.map",
+    "787.0420ccf9.chunk.js.map": "/money-matters/static/js/787.0420ccf9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3eff246c.css",
+    "static/js/main.4ff0cef0.js"
+  ]
+}
