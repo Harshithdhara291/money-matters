@@ -16,6 +16,9 @@ const Navbar = () => {
 
   const navigate = useNavigate()
   const [isOpen,setIsOpen] = useState(false)
+  const location = useLocation();
+  const email = Cookies.get('user_email')
+  const name = email.split('@')[0]
 
   const handleMenu = () => {
     setIsOpen(!isOpen)
@@ -25,10 +28,6 @@ const Navbar = () => {
     Cookies.remove('user_id')
     navigate('/login')
   }
-
-  const email = Cookies.get('user_email')
-  console.log(email,'email')
-  const name = email.split('@')[0]
 
   const ReactPopUp = () => (
     <div>
@@ -111,14 +110,12 @@ const Navbar = () => {
               </button>
           </div>
         </div>
-        <div>{isOpen && renderOpenView()}</div>
+        <div className='open-view-main'>{isOpen && renderOpenView()}</div>
       </nav>
     )
   }
 
-  const location = useLocation();
-  console.log(location)
-  console.log(location.pathname)
+  
 
   const renderDesktopView = () => (
     <div className='navbar-main-container'>

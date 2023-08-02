@@ -1,6 +1,6 @@
 import React from 'react'
 import Cookies from 'js-cookie'
-import { BsArrowDownCircle,BsArrowUpCircle } from 'react-icons/bs';
+import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
 import { BiError } from 'react-icons/bi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import Popup from 'reactjs-popup'
@@ -87,6 +87,7 @@ const EachLastThreeTransaction = (props) => {
         <p className='txn-para'>{date}</p>
         <p className={style}>{symbol}${eachTxn.amount}</p>
         <div className='icons-cont'>
+          <BsPencil className='edit-icon'/>
         <ReactPopUp/>
         </div>
     </li>

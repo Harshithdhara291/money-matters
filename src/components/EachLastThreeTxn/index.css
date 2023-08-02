@@ -43,6 +43,16 @@
     
     .icons-cont{
         margin-right: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .edit-icon{
+      color: #2D60FF;
+      background: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-right: 1.5rem;
     }
 
     .delete-icon-main{
@@ -113,13 +123,15 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        padding: 0;
     }
     .arrow-txn-cont{
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        width: 5rem;
+        width: 3rem !important;
         margin-left: 0px;
+        
     }
     .txn-name-head{
         color: #4c5481;
@@ -128,15 +140,17 @@
         background: none;
     }
     .txn-para-category{
+        width: 2.5rem !important;
         color: #646c94;
-        width: 4.5rem;
-        font-size: 0.6rem;
+        font-size: 0.1rem;
         background: none;
+        
     }
     .txn-para{
         color: #646c94;
         font-size: 0.6rem;
         background: none;
+        
     }
     .credit{
         color: #16DBAA;
@@ -148,10 +162,19 @@
         font-size: 0.7rem;
         background: none;
     }
-    
     .icons-cont{
-        margin-right: 1rem;
-    }
+      margin-right: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .edit-icon{
+    color: #2D60FF;
+    background: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-right: .5rem;
+  }
     .delete-btn{
         background: none;
         border: none;

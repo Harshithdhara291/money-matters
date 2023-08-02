@@ -79,9 +79,9 @@
       display: flex;
       flex-direction: column;
       background: #fff;
-      padding: 1rem 0 1rem 0;
+      padding: 2rem 0 0 0;
       width: 100%;
-      
+      border-bottom:1px solid rgb(228, 218, 218);
     }
     .mobile-nav-menu {
       display: flex;
@@ -223,6 +223,9 @@
     width: 10rem;
   }
 
+  .open-view-main{
+    padding: 1rem;
+  }
   .open-view-container {
     display: flex;
     justify-content: space-between;
