@@ -212,6 +212,11 @@
     cursor: pointer;
     width: 10rem;
   }
+  .trigger-logout-button:hover{
+    background-color: #d83636;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+  }
   .trigger-close-button{
     border: 1px solid #e6dddd;
     background-color: #fff;
@@ -222,6 +227,11 @@
     border-radius: 1rem;
     cursor: pointer;
     width: 10rem;
+  }
+  .trigger-close-button:hover{
+    background-color: #d83636;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
   }
 
   .open-view-main{

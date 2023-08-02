@@ -69,14 +69,17 @@
         background-color: #2D60FF;
         color: #ffffff;
         font-size: 1rem;
-        width: 100%;
+        width: 90%;
         font-weight: 500;
         border-radius: 0.5rem;
         text-transform: uppercase;
         cursor: pointer;
         border: none;
       }
-     
+      .submit:hover {
+        transform: scale(0.9);
+        transition: 0.3s ease-in-out;
+    }
 }
 
 @media screen and (max-width: 991px) {
@@ -155,5 +158,6 @@
         cursor: pointer;
         border: none;
       }
+      
 }
 

@@ -96,15 +96,20 @@
       }
       .trigger-delete-button{
         border: none;
-    background-color: #DC2626;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.7rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    width: 10rem;
-      }
+      background-color: #DC2626;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.7rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      width: 10rem;
+        }
+        .trigger-delete-button:hover{
+          background-color: #d83636;
+          transform: scale(1.1);
+          transition: 0.3s ease-in-out;
+        }
       .trigger-close-button{
         border: 1px solid #e6dddd;
         background-color: #fff;
@@ -115,6 +120,12 @@
         border-radius: 1rem;
         cursor: pointer;
         width: 10rem;
+      }
+      .trigger-close-button:hover{
+        background-color: #f3eded;
+        color: #0f0f0f;
+        transform: scale(1.1);
+        transition: 0.3s ease-in-out;
       }
 }
 @media screen and (max-width: 991px) {
@@ -249,3 +260,4 @@
     background: none;
     border: none;
 }
+
