@@ -17,7 +17,6 @@ const Navbar = () => {
   const navigate = useNavigate()
   const [isOpen,setIsOpen] = useState(false)
   const location = useLocation();
-  const email = Cookies.get('user_email')
   
 
   const handleMenu = () => {
@@ -30,11 +29,8 @@ const Navbar = () => {
   }
 
   const ReactPopUp = () => {
-    // if(email.length>0){
-    //   const len = email.length - 10
-    //   var name = email.slice(0,len)
-    // }
-    
+    const email = Cookies.get('user_email')
+    const name = email.split('@')[0]
     return (
     <>
       <Popup
@@ -43,7 +39,7 @@ const Navbar = () => {
           <button type='button' className='logout-button'>
               <img src='https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg?w=360' alt='logo' className='image-prf' />
               <div className='name-mail-cont'>
-                <h1 className='logout-name'>name</h1>
+                <h1 className='logout-name'>{name}</h1>
                 <p className='logout-para'>{email}</p>
               </div>
               <FiLogOut className='display-logo' />

@@ -67,7 +67,6 @@ const Profile = () => {
       }
 
       const renderProfile = () =>{
-
         const email = profileData.email ? profileData.email : 'null value'
         const dateOfBirth = profileData.dateOfBirth ? profileData.dateOfBirth : 'null value'
         const presentAddress = profileData.presentAddress ? profileData.presentAddress : 'null value'
@@ -75,6 +74,7 @@ const Profile = () => {
         const postalCode = profileData.postalCode ? profileData.postalCode : 'null value'
         const city = profileData.city ? profileData.city : 'null value'
         const country = profileData.country ? profileData.country : 'null value'
+
 
         return (
             <div className='details-cont'>
