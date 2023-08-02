@@ -32,45 +32,44 @@ const Navbar = () => {
     const email = Cookies.get('user_email')
     const name = email.split('@')[0]
     return (
-    <>
-      <Popup
-        modal
-        trigger={
-          <button type='button' className='logout-button'>
-              <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690992044/Avatar_uasttd.png' alt='logo' className='image-prf' />
-              <div className='name-mail-cont'>
-                <h1 className='logout-name'>{name}</h1>
-                <p className='logout-para'>{email}</p>
-              </div>
-              <FiLogOut className='display-logo' />
-          </button>
-        }
-      >
-        {close => (
-          <>
-           
-              <div className="logout-popup-container">
-                <h1 className='logout-head'><FiLogOut className='logout-icon' />Are you sure you want to Logout?</h1>
-                <div className='buttons-cont'>
-                  <button
-                  type="button"
-                  className="trigger-logout-button"
-                  onClick={onClickLogout}
-                  >Yes, Logout</button>
-                  <button
+      <>
+          <Popup
+            modal
+            trigger={
+              <button type='button' className='logout-button'>
+                  <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690992044/Avatar_uasttd.png' alt='logo' className='image-prf' />
+                  <div className='name-mail-cont'>
+                    <h1 className='logout-name'>{name}</h1>
+                    <p className='logout-para'>{email}</p>
+                  </div>
+                  <FiLogOut className='display-logo' />
+              </button>
+            }
+          >
+            {close => (
+              <>
+                  <div className="logout-popup-container">
+                    <h1 className='logout-head'><FiLogOut className='logout-icon' />Are you sure you want to Logout?</h1>
+                    <div className='buttons-cont'>
+                      <button
                       type="button"
-                      className="trigger-close-button"
-                      onClick={() => close()}
-                    >
-                      Close
-                    </button>
-                </div>
-              </div>
+                      className="trigger-logout-button"
+                      onClick={onClickLogout}
+                      >Yes, Logout</button>
+                      <button
+                          type="button"
+                          className="trigger-close-button"
+                          onClick={() => close()}
+                        >
+                          Close
+                        </button>
+                    </div>
+                  </div>
+              </>
+            )}
             
-          </>
-        )}
-      </Popup>
-    </>
+          </Popup>
+      </>
    )}
 
   const renderOpenView = () => (

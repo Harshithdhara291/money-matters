@@ -2,7 +2,7 @@ import React from 'react'
 import Cookies from 'js-cookie'
 import { useState,useEffect } from 'react';
 import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css'
+// import 'reactjs-popup/dist/index.css'
 import LoadingView from '../Loading'
 import FailureView from '../FailureView'
 import AddTransaction from '../AddTransaction';
@@ -80,10 +80,6 @@ const AllTransactions = () => {
 
         let filteredTxns = transactionData
         console.log(activeTab)
-        // console.log(transactionData)
-        // console.log(creditList)
-        // console.log(debitList)
-
         switch(activeTab){
           case 'ALLTXNS':
             filteredTxns=transactionData
@@ -130,7 +126,7 @@ const AllTransactions = () => {
       }
 
       const ReactPopUp = () => (
-        <div>
+        <div >
           <Popup
             modal
             trigger={
@@ -138,18 +134,20 @@ const AllTransactions = () => {
                 + Add Transaction
               </button>
             }
-            
           >
             {close => (
               <>
-                  <div className="popup-container">< AddTransaction getAllTransactions={getAllTransactions}/></div>
-                <button
+                  <div className="popup-container">
+                  < AddTransaction getAllTransactions={getAllTransactions}/>
+                  <button
                   type="button"
                   className="trigger-button"
                   onClick={() => close()}
                 >
                   Close
                 </button>
+                </div>
+                
               </>
             )}
           </Popup>
