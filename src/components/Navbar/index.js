@@ -18,7 +18,7 @@ const Navbar = () => {
   const [isOpen,setIsOpen] = useState(false)
   const location = useLocation();
   const email = Cookies.get('user_email')
-  const name = email.split('@')[0]
+  
 
   const handleMenu = () => {
     setIsOpen(!isOpen)
@@ -29,8 +29,11 @@ const Navbar = () => {
     navigate('/login')
   }
 
-  const ReactPopUp = () => (
-    <div>
+  const ReactPopUp = () => {
+    const len = email.length - 10
+    const name = email.slice(0,len)
+    return (
+    <>
       <Popup
         modal
         trigger={
@@ -68,8 +71,8 @@ const Navbar = () => {
           </>
         )}
       </Popup>
-    </div>
-   )
+    </>
+   )}
 
   const renderOpenView = () => (
     <div className="open-view-container">
