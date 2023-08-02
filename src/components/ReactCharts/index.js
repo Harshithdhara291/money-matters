@@ -1,8 +1,6 @@
 import React from 'react'
 import Cookies from 'js-cookie'
 import { useEffect } from 'react';
-// import LoadingView from '../Loading'
-// import FailureView from '../FailureView'
 import {Bar} from 'react-chartjs-2'
 import {CategoryScale,Chart,LinearScale,BarElement,Legend,Title,Tooltip} from 'chart.js'; 
 import './index.css'
@@ -10,6 +8,8 @@ import './index.css'
 Chart.register(CategoryScale,LinearScale,BarElement,Legend,Title,Tooltip)
 
 const labels = ['sun','mon','tue','wed','thu','fri','sat']
+
+// used dummy data as last 7 days credit and debits values are unstable and most of tham are 0. But fetched APIs and data retrieved  
 
 const data = {
     labels,
@@ -95,7 +95,7 @@ const ReactChart = () => {
         }
       }
 
-      const renderProfile = () =>{
+      const renderCharts = () =>{
 
         return (
             <div className='chart'>
@@ -105,10 +105,10 @@ const ReactChart = () => {
       }
 
     
-      // const renderProfileData = () => {
+      // const renderChartsData = () => {
       //   switch (apiStatus) {
       //     case apiStatusConstants.success:
-      //       return renderProfile()
+      //       return renderCharts()
       //     case apiStatusConstants.failure:
       //       return FailureView()
       //     case apiStatusConstants.inProgress:
@@ -121,7 +121,7 @@ const ReactChart = () => {
   return (
     <div className='main-container-chart'>
         <h1 className='accounts-head-charts'>Debit & Credit Overview</h1>
-        {renderProfile()}
+        {renderCharts()}
     </div>
   )
 }

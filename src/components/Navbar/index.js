@@ -37,7 +37,7 @@ const Navbar = () => {
         modal
         trigger={
           <button type='button' className='logout-button'>
-              <img src='https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg?w=360' alt='logo' className='image-prf' />
+              <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690992044/Avatar_uasttd.png' alt='logo' className='image-prf' />
               <div className='name-mail-cont'>
                 <h1 className='logout-name'>{name}</h1>
                 <p className='logout-para'>{email}</p>

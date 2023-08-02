@@ -78,7 +78,7 @@ const Profile = () => {
 
         return (
             <div className='details-cont'>
-                <img src='https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg?w=360' alt='profile'  className='profile-image' />
+                <img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690992034/Mask_Group_c8ptrm.png' alt='profile'  className='profile-image' />
                 <div className='profile-item-container'>
                     <div className='profile-item'>
                       <h1 className='profile-labels'>Your Name</h1>
