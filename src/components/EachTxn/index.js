@@ -6,15 +6,17 @@ import { BiError } from 'react-icons/bi';
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 import './index.css'
+import UpdateTransaction from '../UpdateTransaction';
 
 const EachTransaction = (props) => {
     const {eachTxn,getAllTransactions} = props
+    console.log(eachTxn)
     const isCredit = eachTxn.type==='credit'
     const arrow = isCredit ? <BsArrowUpCircle/> : <BsArrowDownCircle/>
     const symbol = isCredit ? "+" : "-"
     const style = isCredit ? 'credit' : 'debit'
-    const category = eachTxn.category ? eachTxn.category : 'none'
-    const date = eachTxn.date.slice(0,10)
+    const categoryy = eachTxn.category ? eachTxn.category : 'none'
+    const datee = eachTxn.date.slice(0,10)
 
     const deleteTransactions = async () => {
         const userId = Cookies.get('user_id')
@@ -40,7 +42,7 @@ const EachTransaction = (props) => {
         
       }
 
-      const ReactPopUp = () => (
+      const ReactPopUpDelete = () => (
         <div>
           <Popup
             modal
@@ -68,7 +70,30 @@ const EachTransaction = (props) => {
                         </button>
                     </div>
                   </div>
-                
+              </>
+            )}
+          </Popup>
+        </div>
+       )
+
+       const ReactPopUpUpdate = () => (
+        <div>
+          <Popup
+            modal
+            trigger={
+              <button type='button' className='dlt-btn'><BsPencil className='edit-icon' /></button>
+            }
+          >
+            {close => (
+              <>
+                <div><UpdateTransaction eachTxn={eachTxn} getAllTransactions={getAllTransactions} /> </div>
+                <button
+                  type="button"
+                  className="trigger-button"
+                  onClick={() => close()}
+                >
+                  Close
+                </button> 
               </>
             )}
           </Popup>
@@ -83,12 +108,12 @@ const EachTransaction = (props) => {
          <span className={style}>{arrow}</span>
          <h1 className='txn-name-head'>{eachTxn.transactionName}</h1>
         </div>
-        <p className='txn-para-category'>{category}</p>
-        <p className='txn-para'>{date}</p>
+        <p className='txn-para-category'>{categoryy}</p>
+        <p className='txn-para'>{datee}</p>
         <p className={style}>{symbol}${eachTxn.amount}</p>
         <div className='icons-cont'>
-          <BsPencil  className='edit-icon' />
-        <ReactPopUp/>
+          <ReactPopUpUpdate />
+        <ReactPopUpDelete/>
         </div>
     </li>
     

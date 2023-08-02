@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
 import { BiError } from 'react-icons/bi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import UpdateTransaction from '../UpdateTransaction';
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 import './index.css'
@@ -41,7 +42,7 @@ const EachLastThreeTransaction = (props) => {
         
       }
 
-      const ReactPopUp = () => (
+      const ReactPopUpDelete = () => (
         <div>
           <Popup
             modal
@@ -75,7 +76,30 @@ const EachLastThreeTransaction = (props) => {
           </Popup>
         </div>
        )
-
+      
+       const ReactPopUpUpdate = () => (
+        <div>
+          <Popup
+            modal
+            trigger={
+              <button type='button' className='dlt-btn'><BsPencil className='edit-icon' /></button>
+            }
+          >
+            {close => (
+              <>
+                <div><UpdateTransaction eachTxn={eachTxn} getAllTransactions={getLastTransactions} /> </div>
+                <button
+                  type="button"
+                  className="trigger-button"
+                  onClick={() => close()}
+                >
+                  Close
+                </button> 
+              </>
+            )}
+          </Popup>
+        </div>
+       )
 
     return (
     <li key={eachTxn.id} className='each-txn'>
@@ -87,8 +111,8 @@ const EachLastThreeTransaction = (props) => {
         <p className='txn-para'>{date}</p>
         <p className={style}>{symbol}${eachTxn.amount}</p>
         <div className='icons-cont'>
-          <BsPencil className='edit-icon'/>
-        <ReactPopUp/>
+          < ReactPopUpUpdate />
+          <ReactPopUpDelete/>
         </div>
     </li>
     
