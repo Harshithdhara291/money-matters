@@ -103,6 +103,7 @@ const EachTransaction = (props) => {
 
 
     return (
+      <>
     <li key={eachTxn.id} className='each-txn'>
         <div className='arrow-txn-cont'>
          <span className={style}>{arrow}</span>
@@ -113,10 +114,11 @@ const EachTransaction = (props) => {
         <p className={style}>{symbol}${eachTxn.amount}</p>
         <div className='icons-cont'>
           <ReactPopUpUpdate />
-        <ReactPopUpDelete/>
+          <ReactPopUpDelete/>
         </div>
     </li>
-    
+    <hr className="horizontal-line" />
+    </>
 )
 }
 
