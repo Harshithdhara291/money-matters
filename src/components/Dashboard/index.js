@@ -4,6 +4,9 @@ import Cookies from 'js-cookie'
 import Navbar from '../Navbar'
 import LastThreeTransactions from '../LastThreeTransactions'
 import ReactChart from '../ReactCharts'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
+import AddTransaction from '../AddTransaction'
 import './index.css'
 
 const Dashboard = () => {
@@ -85,7 +88,32 @@ const Dashboard = () => {
   const resultCredit = (userId===3) ? creditAdmin : credit
   const resultDebit = (userId===3) ? debitAdmin : debit
 
-
+  const ReactPopUp = () => (
+    <div>
+      <Popup
+        modal
+        trigger={
+          <button type="button" className="add-txn-button">
+            + Add Transaction
+          </button>
+        }
+        
+      >
+        {close => (
+          <>
+              <div className="popup-container">< AddTransaction/></div>
+            <button
+              type="button"
+              className="trigger-button"
+              onClick={() => close()}
+            >
+              Close
+            </button>
+          </>
+        )}
+      </Popup>
+    </div>
+   )
 
   return (
     <div className='main-container'>
@@ -93,6 +121,7 @@ const Dashboard = () => {
       <div className='dashboard-container'>
         <div className='head-container'>
           <h1 className='accounts-head'>Accounts</h1>
+          <ReactPopUp/>
         </div>
         <div className='second-container'>
             <div className='credit-debit-container'>

@@ -3,8 +3,7 @@ import { useState } from 'react'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const AddTransaction = ({ getAllTransactions }) => {
-
+const AddTransaction = (props) => {
   const [name, setTxnName] = useState('')
   const [type, setTxnType] = useState('credit')
   const [category, setCategory] = useState('transfer')
@@ -36,7 +35,15 @@ const AddTransaction = ({ getAllTransactions }) => {
         setCategory('transfer')
         setAmount('')
         setDate('')
-        getAllTransactions()
+        console.log(props,'props')
+        if (Object.getOwnPropertyNames(props).length !== 0){
+          console.log('if true')
+          const {getAllTransactions} = props
+          getAllTransactions()
+        } else{
+          alert('Transaction Added!!')
+        }
+        
       }
 
 

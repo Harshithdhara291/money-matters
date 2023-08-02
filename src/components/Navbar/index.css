@@ -7,23 +7,29 @@
     display: none;
   }
 .navbar{
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
     height: 85vh;
 }
 .nav-container{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start; */
   height: 80vh;
   width: 100%;
+  margin-left: 0;
 }
 .nav-menu{
     list-style-type: none;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+     padding-left: 0;
+     margin-top: 3rem;
   }
 .nav-menu-item{
-    margin: 2rem 0 2rem 0;
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .nav-link{
@@ -33,8 +39,27 @@
     display: flex;
     align-items: center;
     color: #505887;
-    ;
+    padding: 0.6rem 0.5rem 0.6rem 2.5rem ;
+    box-sizing: border-box;
+    border-left: 6px solid #ffffff;
 }
+.active-link{
+  padding: 0.6rem 0.5rem 0.6rem 2.5rem ;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: #2D60FF;
+  border-left: 6px solid #2D60FF;
+  box-sizing: border-box;
+}
+.desktop-logo {
+  height: 2rem;
+  margin-left: 2rem;
+  width: 12rem;
+}
+
 
 .react-icon{
     margin-right: 0.5rem;
@@ -135,7 +160,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items:center;
+    align-items:flex-start;
   }
   .logout-name{
     font-size: 0.8rem;
@@ -229,3 +254,5 @@
     color: #000000;
     font-size: 24px;
   }
+
+  

@@ -49,10 +49,18 @@
         border: none;
     }
     .delete-icon{
-        color: #FE5C73;
-        font-weight: 600;
-        font-size: 1.3rem;
-        cursor: pointer;
+        color: #D97706;
+        background-color: #FDE68A;
+        border: 5px solid #FEF3C7;
+        padding: 0.6rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+    .delete-head{
+        color: #333B69;
+        font-weight: 700;
+        font-size: 2rem;
     }
 }
 @media screen and (max-width: 991px) {
@@ -105,9 +113,17 @@
         border: none;
     }
     .delete-icon{
-        color: #FE5C73;
-        background: none;
-        font-size: 0.7rem;
-        cursor: pointer;
+        color: #D97706;
+        background-color: #FDE68A;
+        border: 5px solid #FEF3C7;
+        padding: 0.6rem;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        margin-right: 1rem;
+    }
+    .delete-head{
+        color: #333B69;
+        font-weight: 600;
+        font-size: 1rem;
     }
 }

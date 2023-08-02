@@ -5,6 +5,9 @@ import { useState,useEffect } from 'react';
 import LoadingView from '../Loading'
 import Navbar from '../Navbar'
 import FailureView from '../FailureView'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
+import AddTransaction from '../AddTransaction'
 import './index.css'
 
 const apiStatusConstants = {
@@ -127,6 +130,7 @@ const Profile = () => {
         )
       }
 
+
     
       const renderProfileData = () => {
         switch (apiStatus) {
@@ -141,12 +145,40 @@ const Profile = () => {
         }
       }
 
+      const ReactPopUp = () => (
+        <div>
+          <Popup
+            modal
+            trigger={
+              <button type="button" className="add-txn-button">
+                + Add Transaction
+              </button>
+            }
+            
+          >
+            {close => (
+              <>
+                  <div className="popup-container">< AddTransaction/></div>
+                <button
+                  type="button"
+                  className="trigger-button"
+                  onClick={() => close()}
+                >
+                  Close
+                </button>
+              </>
+            )}
+          </Popup>
+        </div>
+       )
+
   return (
     <div className='main-container-profile'>
       <div className='header-container'><Navbar/></div>
       <div className='profile-container'>
       <div className='all-txns-head-container'>
         <h1 className='accounts-head'>Profile</h1>
+        <ReactPopUp/>
       </div>
       <div className='profile-second-container'>{renderProfileData()}</div>
       </div>

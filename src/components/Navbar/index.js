@@ -5,7 +5,7 @@ import { MdAccountBox } from 'react-icons/md';
 import { FiLogOut,FiMenu } from 'react-icons/fi';
 import {AiFillCloseCircle} from 'react-icons/ai'
 import Cookies from 'js-cookie'
-import { useNavigate } from 'react-router-dom' 
+import { useNavigate,useLocation } from 'react-router-dom' 
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 import './index.css'
@@ -116,30 +116,32 @@ const Navbar = () => {
     )
   }
 
+  const location = useLocation();
+  console.log(location)
+  console.log(location.pathname)
+
   const renderDesktopView = () => (
     <div className='navbar-main-container'>
     <nav className='navbar'>
-    <Link to="/"><img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690692005/Logo_usdjsi.png' alt='website-logo' className='mobile-logo' /></Link>
+    <Link to="/"><img src='https://res.cloudinary.com/di4qjlwyr/image/upload/v1690692005/Logo_usdjsi.png' alt='website-logo' className='desktop-logo' /></Link>
     <div className='nav-container'>
         <ul className="nav-menu">
                 <li className="nav-menu-item">
-                <Link to="/" className="nav-link">
+                <Link to="/" className={location.pathname === '/' ? 'active-link' : 'nav-link'} >
                 <AiFillHome className='react-icon'/> Dashboard
                 </Link>
                 </li>
 
                 <li className="nav-menu-item">
-                <Link to="/transactions" className="nav-link">
+                <Link to="/transactions" className={location.pathname === '/transactions' ? 'active-link' : 'nav-link'} >
                 <AiOutlineTransaction className='react-icon'/> Transactions
                 </Link>
                 </li>
                 <li className="nav-menu-item">
-                <Link to="/profile" className="nav-link">
+                <Link to="/profile" className={location.pathname === '/profile' ? 'active-link' : 'nav-link'} >
                 <MdAccountBox className='react-icon'/> Profile
                 </Link>
                 </li>
-                
-
         </ul>
         
     </div>

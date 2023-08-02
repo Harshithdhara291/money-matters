@@ -156,12 +156,6 @@
         background: none;
         border: none;
     }
-    .delete-icon{
-        color: #FE5C73;
-        background: none;
-        font-size: 0.7rem;
-        cursor: pointer;
-    }
     .delete-container{
         padding: 1rem;
       }
@@ -174,7 +168,6 @@
         border-radius: 50%;
         font-size: 1rem;
         margin-right: 1rem;
-
       }
     
       .delete-head{
