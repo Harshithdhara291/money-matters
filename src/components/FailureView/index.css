@@ -1,34 +1,37 @@
 .failure-view {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'HK Grotesk';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    background-color: #0d0d0d;
-    color: #ffffff;
+    border: 1px solid rgb(228, 218, 218);
+    border-radius: 2rem;
+    width: 95%;
+    padding: 2rem 0 2rem 0;
+    margin-left: 2rem;
+    color: #343C6A;
   }
   @media only screen and (max-width: 991px) {
     h1 {
-      font-family: 'HK Grotesk';
+      
       font-style: normal;
       font-weight: 500;
-      font-size: 20px;
-      background-color: #0d0d0d;
-      color: #ffffff;
+      font-size: 1.5rem;
+      color: #343C6A;
+      text-align: center;
+    }
+    .failure-view {
+      margin-left: 1rem;
+      width: 90%;
     }
   }
   
   .try-again-button {
-    font-family: 'HK Grotesk';
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 1rem;
     color: #171f46;
-    padding: 5px;
+    padding: 1rem;
     cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid rgb(228, 218, 218);
   }

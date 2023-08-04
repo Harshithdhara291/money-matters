@@ -1,11 +1,7 @@
 import './index.css'
 
 const FailureView = props => {
-  const {onClickRetry} = props
-
-  const tryAgain = () => {
-    onClickRetry()
-  }
+  const {retry} = props
   return (
     <div className="failure-view">
       <img
@@ -14,7 +10,7 @@ const FailureView = props => {
         className="alert-icon"
       />
       <h1>Something went wrong. Please try again</h1>
-      <button type="button" className="try-again-button" onClick={tryAgain}>
+      <button type="button" className="try-again-button" onClick={retry}>
         Try Again
       </button>
     </div>

@@ -62,9 +62,11 @@ const UpdateTransaction = (props) => {
             <label  htmlFor="category">Category</label>
             <select id='category' value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value='transfer'>Transfer</option>
-                <option value='food'>Food</option>
                 <option value='shopping'>Shopping</option>
                 <option value='salary'>Salary</option>
+                <option value='service'>Service</option>
+                <option value='subscriptions'>Subscriptions</option>
+                <option value='others'>Others</option>
             </select>
         <label  htmlFor="amount">
               Amount
@@ -74,7 +76,7 @@ const UpdateTransaction = (props) => {
               id="amount"
               value={amount}
               onChange={e => setAmount(e.target.value)}
-              placeholder="Enter Amount"
+              placeholder="Enter Your Amount"
               required
             />
         <label  htmlFor="date">

@@ -74,7 +74,7 @@ const LastThreeTransactions = () => {
           case apiStatusConstants.success:
             return renderLastTransactions()
           case apiStatusConstants.failure:
-            return FailureView()
+            return <FailureView  retry={getLastTransactions} />
           case apiStatusConstants.inProgress:
             return LoadingView()
           default:

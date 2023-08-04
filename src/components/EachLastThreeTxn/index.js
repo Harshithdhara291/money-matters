@@ -14,6 +14,7 @@ const EachLastThreeTransaction = (props) => {
     const arrow = isCredit ? <BsArrowUpCircle/> : <BsArrowDownCircle/>
     const symbol = isCredit ? "+" : "-"
     const style = isCredit ? 'credit' : 'debit'
+    const style1 = isCredit ? 'credit-arr' : 'debit-arr'
     const category = eachTxn.category ? eachTxn.category : 'none'
     const date = eachTxn.date.slice(0,10)
 
@@ -105,7 +106,7 @@ const EachLastThreeTransaction = (props) => {
       <>
     <li key={eachTxn.id} className='each-txn'>
         <div className='arrow-txn-cont'>
-         <span className={style}>{arrow}</span>
+         <span className={style1}>{arrow}</span>
          <h1 className='txn-name-head'>{eachTxn.transactionName}</h1>
         </div>
         <p className='txn-para-category'>{category}</p>

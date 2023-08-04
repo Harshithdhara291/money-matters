@@ -137,7 +137,7 @@ const Profile = () => {
           case apiStatusConstants.success:
             return renderProfile()
           case apiStatusConstants.failure:
-            return FailureView()
+            return <FailureView  retry={getProfileData} />
           case apiStatusConstants.inProgress:
             return LoadingView()
           default:

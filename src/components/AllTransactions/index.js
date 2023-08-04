@@ -8,6 +8,7 @@ import FailureView from '../FailureView'
 import AddTransaction from '../AddTransaction';
 import TabItem from '../TabItem';
 import EachTransaction from '../EachTxn';
+import { AiOutlineClose } from "react-icons/ai";
 import './index.css'
 
 const apiStatusConstants = {
@@ -50,7 +51,7 @@ const AllTransactions = () => {
         method: 'GET',
         }
         const response = await fetch(apiUrl, options)
-       
+        console.log(response)
         if (response.ok) {
             const fetchedData = await response.json()
           const updatedData = fetchedData.transactions.map(txn => ({
@@ -64,6 +65,7 @@ const AllTransactions = () => {
           setTransactionData(updatedData)
           setApiStatus(apiStatusConstants.success)
         } else {
+          console.log('eroor')
           setApiStatus(apiStatusConstants.failure)
         }
       }
@@ -113,7 +115,7 @@ const AllTransactions = () => {
           case apiStatusConstants.success:
             return renderAllTransactions()
           case apiStatusConstants.failure:
-            return FailureView()
+            return <FailureView  retry={getAllTransactions} />
           case apiStatusConstants.inProgress:
             return LoadingView()
           default:
@@ -126,28 +128,29 @@ const AllTransactions = () => {
       }
 
       const ReactPopUp = () => (
-        <div >
+        <div>
           <Popup
             modal
+            className='popup-modal'
             trigger={
               <button type="button" className="add-txn-button">
                 + Add Transaction
               </button>
+              
             }
           >
             {close => (
               <>
                   <div className="popup-container">
-                  < AddTransaction getAllTransactions={getAllTransactions}/>
-                  <button
+                < AddTransaction getAllTransactions={getAllTransactions}/>
+                <button
                   type="button"
                   className="trigger-button"
                   onClick={() => close()}
                 >
-                  Close
+                  <AiOutlineClose/>
                 </button>
                 </div>
-                
               </>
             )}
           </Popup>

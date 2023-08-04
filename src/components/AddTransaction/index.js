@@ -5,8 +5,8 @@ import './index.css'
 
 const AddTransaction = (props) => {
   const [name, setTxnName] = useState('')
-  const [type, setTxnType] = useState('credit')
-  const [category, setCategory] = useState('transfer')
+  const [type, setTxnType] = useState()
+  const [category, setCategory] = useState()
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
 
@@ -31,8 +31,8 @@ const AddTransaction = (props) => {
         const data = await response.json()
         console.log(data)
         setTxnName('')
-        setTxnType('credit')
-        setCategory('transfer')
+        setTxnType()
+        setCategory()
         setAmount('')
         setDate('')
         console.log(props,'props')
@@ -51,6 +51,7 @@ const AddTransaction = (props) => {
     <div className='add-transaction'>
     <form className="form-ad" onSubmit={submitForm} >
        <p className="form-title-ad">Add Transaction</p>
+       
         <div className="input-container-ad">
         <label  htmlFor="txnName">Transaction Name</label>
         <input
@@ -63,15 +64,19 @@ const AddTransaction = (props) => {
             />
             <label  htmlFor="type">Transaction Type</label>
             <select id='type' value={type} onChange={(e) => setTxnType(e.target.value)}>
+                <option value="Select Transaction Type" hidden>Select Transaction Type</option>
                 <option value='credit'>credit</option>
                 <option value='debit'>debit</option>
             </select>
             <label  htmlFor="category">Category</label>
             <select id='category' value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="Select" hidden>Select</option>
                 <option value='transfer'>Transfer</option>
-                <option value='food'>Food</option>
                 <option value='shopping'>Shopping</option>
                 <option value='salary'>Salary</option>
+                <option value='service'>Service</option>
+                <option value='subscriptions'>Subscriptions</option>
+                <option value='others'>Others</option>
             </select>
         <label  htmlFor="amount">
               Amount
@@ -81,7 +86,7 @@ const AddTransaction = (props) => {
               id="amount"
               value={amount}
               onChange={e => setAmount(e.target.value)}
-              placeholder="Enter Amount"
+              placeholder="Enter Your Amount"
               required
             />
         <label  htmlFor="date">

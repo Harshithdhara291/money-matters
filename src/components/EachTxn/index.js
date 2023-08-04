@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { BiError } from 'react-icons/bi';
+import { AiOutlineClose } from "react-icons/ai";
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 import './index.css'
@@ -14,6 +15,7 @@ const EachTransaction = (props) => {
     const isCredit = eachTxn.type==='credit'
     const arrow = isCredit ? <BsArrowUpCircle/> : <BsArrowDownCircle/>
     const symbol = isCredit ? "+" : "-"
+    const style1 = isCredit ? 'credit-arr' : 'debit-arr'
     const style = isCredit ? 'credit' : 'debit'
     const categoryy = eachTxn.category ? eachTxn.category : 'none'
     const datee = eachTxn.date.slice(0,10)
@@ -80,20 +82,23 @@ const EachTransaction = (props) => {
         <div>
           <Popup
             modal
+            className='popup-modal'
             trigger={
               <button type='button' className='dlt-btn'><BsPencil className='edit-icon' /></button>
             }
           >
             {close => (
               <>
-                <div><UpdateTransaction eachTxn={eachTxn} getAllTransactions={getAllTransactions} /> </div>
-                <button
-                  type="button"
-                  className="trigger-button"
-                  onClick={() => close()}
-                >
-                  Close
-                </button> 
+                  <div className="popup-container">
+                     <UpdateTransaction eachTxn={eachTxn} getAllTransactions={getAllTransactions} /> 
+                  <button
+                    type="button"
+                    className="trigger-button"
+                    onClick={() => close()}
+                  >
+                  <AiOutlineClose/>
+                  </button>
+                  </div> 
               </>
             )}
           </Popup>
@@ -106,7 +111,7 @@ const EachTransaction = (props) => {
       <>
     <li key={eachTxn.id} className='each-txn'>
         <div className='arrow-txn-cont'>
-         <span className={style}>{arrow}</span>
+         <span className={style1}>{arrow}</span>
          <h1 className='txn-name-head'>{eachTxn.transactionName}</h1>
         </div>
         <p className='txn-para-category'>{categoryy}</p>

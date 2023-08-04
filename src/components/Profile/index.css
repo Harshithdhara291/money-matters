@@ -39,7 +39,8 @@
         flex-wrap: wrap;
         background-color: #fff;
         border-radius: 1.5rem;
-        padding: 1rem 0 1rem 0;
+        padding: 1rem 0 2.5rem 0;
+        border: 1px solid rgba(228, 218, 218, 0.5);
     }
     .profile-image{
         height: 8rem;
