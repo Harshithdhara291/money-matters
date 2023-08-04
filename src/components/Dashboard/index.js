@@ -6,6 +6,8 @@ import LastThreeTransactions from '../LastThreeTransactions'
 import ReactChart from '../ReactCharts'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
+import { AiOutlineClose } from "react-icons/ai";
+
 import AddTransaction from '../AddTransaction'
 import './index.css'
 
@@ -92,6 +94,7 @@ const Dashboard = () => {
     <div>
       <Popup
         modal
+        className='popup-modal'
         trigger={
           <button type="button" className="add-txn-button">
             + Add Transaction
@@ -101,14 +104,16 @@ const Dashboard = () => {
       >
         {close => (
           <>
-              <div className="popup-container">< AddTransaction/></div>
-            <button
-              type="button"
-              className="trigger-button"
-              onClick={() => close()}
-            >
-              Close
-            </button>
+              <div className="popup-container">
+                < AddTransaction />
+                <button
+                  type="button"
+                  className="trigger-button"
+                  onClick={() => close()}
+                >
+                  <AiOutlineClose/>
+                </button>
+                </div>
           </>
         )}
       </Popup>

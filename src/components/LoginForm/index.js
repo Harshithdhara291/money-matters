@@ -101,7 +101,7 @@ const LoginForm = (props) => {
        <p className="form-title">Sign in to your account</p>
         <div className="input-container">{renderUsernameField()}</div>
         <div className="input-container">{renderPasswordField()}</div>
-         <button type="submit" className="submit">
+         <button type="submit" className="submit-login">
         Sign in
       </button>
       {showSubmitError && <p className="error-message">*{errorMsg}</p>}

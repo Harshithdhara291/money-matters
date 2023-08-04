@@ -7,6 +7,8 @@ import Navbar from '../Navbar'
 import FailureView from '../FailureView'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
+import { AiOutlineClose } from "react-icons/ai";
+
 import AddTransaction from '../AddTransaction'
 import './index.css'
 
@@ -149,6 +151,7 @@ const Profile = () => {
         <div>
           <Popup
             modal
+            className='popup-modal'
             trigger={
               <button type="button" className="add-txn-button">
                 + Add Transaction
@@ -158,14 +161,16 @@ const Profile = () => {
           >
             {close => (
               <>
-                  <div className="popup-container">< AddTransaction/></div>
+                   <div className="popup-container">
+                < AddTransaction />
                 <button
                   type="button"
                   className="trigger-button"
                   onClick={() => close()}
                 >
-                  Close
+                  <AiOutlineClose/>
                 </button>
+                </div>
               </>
             )}
           </Popup>

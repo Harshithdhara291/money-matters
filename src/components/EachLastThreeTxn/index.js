@@ -4,6 +4,8 @@ import { BsArrowDownCircle,BsArrowUpCircle,BsPencil } from 'react-icons/bs';
 import { BiError } from 'react-icons/bi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import UpdateTransaction from '../UpdateTransaction';
+import { AiOutlineClose } from "react-icons/ai";
+
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 import './index.css'
@@ -82,20 +84,23 @@ const EachLastThreeTransaction = (props) => {
         <div>
           <Popup
             modal
+            className='popup-modal'
             trigger={
               <button type='button' className='dlt-btn'><BsPencil className='edit-icon' /></button>
             }
           >
             {close => (
               <>
-                <div><UpdateTransaction eachTxn={eachTxn} getAllTransactions={getLastTransactions} /> </div>
-                <button
-                  type="button"
-                  className="trigger-button"
-                  onClick={() => close()}
-                >
-                  Close
-                </button> 
+                 <div className="popup-container">
+                     <UpdateTransaction eachTxn={eachTxn} getAllTransactions={getLastTransactions} /> 
+                  <button
+                    type="button"
+                    className="trigger-button"
+                    onClick={() => close()}
+                  >
+                  <AiOutlineClose/>
+                  </button>
+                  </div> 
               </>
             )}
           </Popup>
