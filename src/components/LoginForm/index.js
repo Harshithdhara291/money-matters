@@ -4,7 +4,7 @@ import { Navigate,useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
   const [email, setEmail] = useState('admin@gmail.com')
   const [password, setPassword] = useState('Admin@123')
@@ -15,7 +15,7 @@ const LoginForm = (props) => {
   const onSubmitSuccess = userId => {
 
     Cookies.set('user_id', userId, {
-      expires: 30,
+      expires: 1,
     })
     navigate('/')
   }

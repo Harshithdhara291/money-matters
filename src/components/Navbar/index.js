@@ -13,6 +13,7 @@ import './index.css'
 
 
 const Navbar = () => {
+  console.log('navbar mounted')
 
   const navigate = useNavigate()
   const [isOpen,setIsOpen] = useState(false)
